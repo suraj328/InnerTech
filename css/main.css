@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.nav-component{
+    margin: 0.5rem;
+    padding: 0.2rem;
+    cursor:pointer;
+}
+.anonymous-logo{
+    height: 3.7rem;
+}
+.about-component{
+    background-color: gray;
+}
+.apointement-from{
+    display:none;
+}
+#Appointment:checked ~ .apointement-from{
+    display: block;
+}
+.apointement-from{
+    top: 10%;
+    z-index: 1;
+}
+.apointement-text{
+    cursor: pointer;
+}
+.amt-close{
+    font-size:xx-large;
+    cursor: pointer;
+    float: right;
+}
