@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
 
@@ -19,12 +19,12 @@
         <div class="nav-component"><img class="anonymous-logo" src="../image/avatar-2024924_640.png" alt=""></div>
         <div class="nav-component "><img src="../image/bb-logo.png" class="anonymous-logo" srcset=""></div>
         <div class="nav-component "><button type="button" class="btn border border-secondary ">
-            <label  for="Appointment"><span class="apointement-text">Appointment</span></label>   
-            <i class="fa fa-bars" aria-hidden="true"></i></button>
+                <label for="Appointment"><span class="apointement-text">Appointment</span></label>
+                <i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
     </section>
     <!-- carasoul -->
-    <section class="carasoul h-50" >
+    <section class="carasoul h-50">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
             <!-- Indicators/dots -->
@@ -56,6 +56,89 @@
             </button>
         </div>
     </section>
+    <!-- review -->
+    <section class="write-review py-5 bg-light" id="write-review">
+        <div class="container" >
+            <div class="row ">
+                <div class="col-md-4 review-scroll">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Overall Rating</h5>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>User-friendliness</p>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Doctor was awsome
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>User-friendliness</p>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Doctor was awsome
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>User-friendliness</p>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Doctor was awsome
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>User-friendliness</p>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-8 my-3 py-3">
+                <form action="">
+                    <h6>Write your idea about the Doctor</h6>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="reviewmessage" rows="3"></textarea>
+                      </div>
+                    <h5>Explore Your Rating</h5>
+                        <div class="fill-star">
+                            
+                        </div>
+                        <input type="range" min="1" max="5"   class="starslider" id="myRange">
+                        <br>
+                    <button type="button" class="btn btn-success">Write Reviews</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Doctor details -->
     <section class="about bg-secondary">
         About Doctor
@@ -75,69 +158,71 @@
         </div>
     </section>
 
+
     <!-- apointment form -->
     <input class="d-none" type="radio" name="pop-up" id="Appointment">
     <section class="apointement-from w-100 position-absolute  start-0 m-auto z-3 ">
         <div class="w-50 m-auto bg-light p-3  border-top border-secondary rounded">
-            <span class="bg-secondary">
-                <label class="" for="Appointment2"><i class="fa fa-times text-dark amt-close" aria-hidden="true"></i></label>
-                <input class="d-none" type="radio" name="pop-up" id="Appointment2">
-            </span>
+            <div class="bg-secondary w-100">
+                <span class="cross  float-right">
+                    <label class="" for="Appointment2"><i class="fa fa-times text-dark amt-close float-right"
+                            aria-hidden="true"></i></label>
+                    <input class="d-none" type="radio" name="pop-up" id="Appointment2">
+
+                </span>
+            </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
             </div>
             <form class="m-2">
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullname">
+                    <input type="text" class="form-control" id="fullname" name="fullname">
                 </div>
                 <div class="mb-3">
                     <label for="cnumber" class="form-label">Contact Number</label>
-                    <input type="text" class="form-control" id="cnumber">
+                    <input type="text" class="form-control" id="cnumber" name="cnumber">
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address">
+                    <input type="text" class="form-control" id="address" name="address">
                 </div>
                 <div class="mb-3">
                     <label for="age" class="form-label">Your Age</label>
-                    <input type="number" class="form-control" id="age">
+                    <input type="number" class="form-control" id="age" name="age">
                 </div>
                 <label for="gender" class="form-check-label">Choose Your Gender</label>
                 <div class="mb-3 form-check">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male"
-                        value="1">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="1">
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female"
-                        value="2">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="2">
                         <label class="form-check-label" for="female">Female</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="other"
-                        value="3">
+                        <input class="form-check-input" type="radio" name="gender" id="other" value="3">
                         <label class="form-check-label" for="other">others</label>
                     </div>
                 </div>
-                <label for="option"class="form-label">Choose Your Consultant</label>
-                <select class="form-select" aria-label="Default select example">
+                <label for="option" class="form-label">Choose Your Consultant</label>
+                <select class="form-select" aria-label="Default select example" name="doctor">
                     <option selected>...</option>
                     <option value="1">DR one</option>
                     <option value="2">DR Two</option>
                     <option value="3">DR Three</option>
-                  </select>
+                </select>
                 <div class="mb-3">
                     <label for="apointement-time" class="form-label">Appointment Time</label>
-                    <input type="datetime-local" class="form-control" id="apointement-time">
+                    <input type="datetime-local" class="form-control" id="apointement-time" name="datetime">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         </form>
     </section>
-    
+
 
 
 
@@ -147,7 +232,8 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/popper.js"></script>
-    
+    <script src="../js/review.js"></script>
+
 
 </body>
 
