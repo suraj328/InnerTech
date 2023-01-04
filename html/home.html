@@ -7,16 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/doctorsinfo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../css/main.css">
+
 
 </head>
 
 <body>
     <!-- navbar -->
     <section class="nav-bar d-flex justify-content-between flex-row bg-light navbar">
-        <div class="nav-component"><img class="anonymous-logo" src="../image/avatar-2024924_640.png" alt=""></div>
+        <!-- <div class="nav-component"><img class="anonymous-logo" src="../image/avatar-2024924_640.png" alt=""></div> -->
         <div class="nav-component "><img src="../image/bb-logo.png" class="anonymous-logo" srcset=""></div>
         <div class="nav-component "><button type="button" class="btn border border-secondary ">
                 <label for="Appointment"><span class="apointement-text">Appointment</span></label>
@@ -24,7 +26,7 @@
         </div>
     </section>
     <!-- carasoul -->
-    <section class="carasoul h-50">
+    <section class="carasoul">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
             <!-- Indicators/dots -->
@@ -58,16 +60,15 @@
     </section>
     <!-- review -->
     <section class="write-review py-5 bg-light" id="write-review">
-        <div class="container" >
+        <div class="container">
             <div class="row ">
                 <div class="col-md-4 review-scroll">
                     <div class="row">
                         <div class="col-md-6">
-                            <h5>Overall Rating</h5>
+                            <h5>Overall Reviews</h5>
                         </div>
-                        <div class="col-md-6 text-warning">
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <div class="col-md-6 ">
+                            <h5>Rating</h5>
                         </div>
                     </div>
                     <hr>
@@ -122,47 +123,165 @@
                     <hr>
                 </div>
                 <div class="col-md-8 my-3 py-3">
-                <form action="">
-                    <h6>Write your idea about the Doctor</h6>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="reviewmessage" rows="3"></textarea>
-                      </div>
-                    <h5>Explore Your Rating</h5>
-                        <div class="fill-star">
-                            
+                    <form action="">
+                        <h6>Write your idea about the Doctor</h6>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="reviewmessage" rows="3"></textarea>
                         </div>
-                        <input type="range" min="1" max="5"   class="starslider" id="myRange">
+                        <h5>Explore Your Rating</h5>
+                        <div id="fillstar">
+
+                        </div>
+                        <input type="range" min="1" max="5" class="starslider" id="myRange">
                         <br>
-                    <button type="button" class="btn btn-success">Write Reviews</button>
-                </form>
+                        <button type="button" class=" my-3 btn btn-success">Submit Reviews</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
     <!-- Doctor details -->
-    <section class="about bg-secondary">
-        About Doctor
-        <div class="d-flex justify-content-between flex-row p-1">
-            <div class="about-component p-1 w-25">skills:<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Minus voluptas
-                numquam tempora quidem quia quo deserunt? Ducimus, id. Dolorum delectus veritatis consectetur, fugit
-                sint iusto ratione iste omnis ipsam voluptatum.</div>
-            <div class="about-component p-1 w-25">personal info<br>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Minus voluptas
-                numquam tempora quidem quia quo deserunt? Ducimus, id. Dolorum delectus veritatis consectetur, fugit
-                sint iusto ratione iste omnis ipsam voluptatum.</div>
-            <div class="about-component p-1 w-25">education<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Minus voluptas
-                numquam tempora quidem quia quo deserunt? Ducimus, id. Dolorum delectus veritatis consectetur, fugit
-                sint iusto ratione iste omnis ipsam voluptatum.</div>
+
+    <section class=" py-5 doctorsinfo" id="write-review">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 my-3 py-3">
+                    <div class="list-group">
+                        <a class="list-group-item list-group-item-action selected-doctor" aria-disabled="true" disable>
+                            Select doctors
+                        </a>
+                        <a href="#doc1" class="list-group-item list-group-item-action hover-doctor" aria-current="true">
+                            doctor 1
+                        </a>
+                        <a href="#doc2" class="list-group-item list-group-item-action hover-doctor">A second link
+                            item</a>
+                        <a href="#doc3" class="list-group-item list-group-item-action hover-doctor">A third link
+                            item</a>
+                        <a href="#" class="list-group-item list-group-item-action hover-doctor">A fourth link item</a>
+                    </div>
+                </div>
+                <div class="col-md-8 review-scroll doct-info-box p-3 rounded">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Available Doctors</h5>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row" id="doc1">
+                        <div class=" p-3">
+                            <div class="container d-flex justify-content-center">
+                                <img src="../image/d1.jpg" class="rounded w-25 doctorimg" alt="">
+                                <br>
+                            </div>
+                            <div class="container d-flex justify-content-center">Doctor1</div>
+                        </div>
+                        <article>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque fugiat
+                            accusamus deleniti, autem aspernatur? Quasi ullam asperiores vel reprehenderit vero quas
+                            aspernatur, praesentium quisquam natus id quis maiores magni laborum illum nihil omnis
+                            tempora excepturi veniam molestias aliquid quidem iure illo eum? Eaque cupiditate sapiente
+                            sed quibusdam veritatis modi!
+                            <dl>
+                                <dt>Education</dt>
+                                <dd>MBBS from calofonia</dd>
+                                <dt>Experience</dt>
+                                <dd>4 years</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    <hr>
+                    <div class="row" id="doc2">
+                        <div class=" p-3">
+                            <div class="container d-flex justify-content-center">
+                                <img src="../image/d1.jpg" class="rounded w-25 doctorimg" alt="">
+                                <br>
+                            </div>
+                            <div class="container d-flex justify-content-center">Doctor2</div>
+                        </div>
+                        <article>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque fugiat
+                            accusamus deleniti, autem aspernatur? Quasi ullam asperiores vel reprehenderit vero quas
+                            aspernatur, praesentium quisquam natus id quis maiores magni laborum illum nihil omnis
+                            tempora excepturi veniam molestias aliquid quidem iure illo eum? Eaque cupiditate sapiente
+                            sed quibusdam veritatis modi!
+                            <dl>
+                                <dt>Education</dt>
+                                <dd>MBBS from calofonia</dd>
+                                <dt>Experience</dt>
+                                <dd>4 years</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    <hr>
+                    <div class="row" id="doc3">
+                        <div class=" p-3">
+                            <div class="container d-flex justify-content-center">
+                                <img src="../image/d1.jpg" class="rounded w-25 doctorimg" alt="">
+                                <br>
+                            </div>
+                            <div class="container d-flex justify-content-center">Doctor3</div>
+                        </div>
+                        <article>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque fugiat
+                            accusamus deleniti, autem aspernatur? Quasi ullam asperiores vel reprehenderit vero quas
+                            aspernatur, praesentium quisquam natus id quis maiores magni laborum illum nihil omnis
+                            tempora excepturi veniam molestias aliquid quidem iure illo eum? Eaque cupiditate sapiente
+                            sed quibusdam veritatis modi!
+                            <dl>
+                                <dt>Education</dt>
+                                <dd>MBBS from calofonia</dd>
+                                <dt>Experience</dt>
+                                <dd>4 years</dd>
+                            </dl>
+                        </article>
+                    </div>
+
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>User-friendliness</p>
+                        </div>
+                        <div class="col-md-6 text-warning">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
         </div>
     </section>
+    <section class="footer">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+                </div>
 
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a></li>
+                    <li class="ms-3"><a class="text-muted" href="#">
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    </a></li>
+                </ul>
+            </footer>
+        </div>
+    </section>
 
     <!-- apointment form -->
     <input class="d-none" type="radio" name="pop-up" id="Appointment">
     <section class="apointement-from w-100 position-absolute  start-0 m-auto z-3 ">
-        <div class="w-50 m-auto bg-light p-3  border-top border-secondary rounded">
+        <div class="w-75  m-auto bg-light p-3  border-top border-secondary rounded">
             <div class="bg-secondary w-100">
                 <span class="cross  float-right">
                     <label class="" for="Appointment2"><i class="fa fa-times text-dark amt-close float-right"

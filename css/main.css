@@ -43,6 +43,7 @@
 .review-scroll{
     overflow:auto;
     height: 20rem;
+    
 }
 .starslider{
     -webkit-appearance: none;
@@ -71,4 +72,33 @@
     height: 1rem; 
     background: #04AA6D; 
     cursor: pointer; 
+  }
+  .doctordetails{
+    height: 10rem;
+    overflow: scroll;
+  }
+  /* navbar */
+  @media(max-width:380px) {
+    .anonymous-logo{
+        height: 2.5rem;
+    }
+  }
+  @media(max-width:325px) {
+    .anonymous-logo{
+        height: 1.9rem;
+    }
+  }
+  
+  .doctorsinfo{
+    background-color:#c3d7e0;
+  }
+  .hover-doctor:hover{
+    background-color:#c3d7e0; 
+  }
+  .selected-doctor{
+    background-color:#c3d7e0; 
+
+  }
+  .doct-info-box{
+    background-color: #e8e8e8a3;
   }
