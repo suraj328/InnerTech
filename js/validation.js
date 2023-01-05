@@ -1,5 +1,6 @@
 $(document).ready(()=>{
 
+
     $('#form-appointment').on('submit',(e)=>{
         e.preventDefault();
         var email = $('#email').val();
@@ -18,23 +19,25 @@ $(document).ready(()=>{
         var dd,mm,year;
         var time = $('#apointement-time').val();
         var timesep = time.split(':');
-        console.log(timesep)
         var hr,min,tz;
         var isValid;
-        var er = 'text-danger';
-        var warn = 'text-warning';
+        var err = 'bg-danger';
         // doctor selection
         if(parseInt(doctor.val()) == 0){
+            $('#doctorOption').addClass(err);
             isValid =  false;
         }else{
             doctorVal =  doctor.val();
+            $('#doctorOption').removeClass(err);
             
         }
+        
         
         // Time
         if(timesep.length == 2)
         {
             isValid = true;
+            $('#apointement-time').removeClass(err);
             min = timesep[1];
             if(timesep[0]>12)
             {
@@ -88,57 +91,90 @@ $(document).ready(()=>{
                 isValid = true;
             }
         }else{
+            $('#apointement-time').addClass(err);
             isValid = false;
         }
+        $('#apointement-time').on('change',()=>{
+            $('#apointement-time').removeClass(err);
+        });
         // email
         if(email.trim() == '')
         {
+            $('#email').addClass(err);
             isValid= false;
         }else if(email.match(emailRegx))
         {
-            
+            $('#email').removeClass(err);
             isValid  = true;
         }else{
+            $('#email').addClass(err);
+
             isValid = false;
         }
+        $('#email').on('keypress',()=>{
+            $('#email').removeClass(err);
+        });
         
         
         // name
         if(name.trim() == ' ')
         {
+            $('#fullname').addClass(err);
             isValid =  false;
         }else if(name.length < 6){
+            $('#fullname').addClass(err);
             isValid = false ;
         }else if(!(name.match(space))){
+            $('#fullname').addClass(err);
             isValid = false;
         }
+        $('#fullname').on('keypress',()=>{
+            $('#fullname').removeClass(err);
+        });
         // number
         if(cnumber.trim() == ''){
             isValid =  false;
+            $('#cnumber').addClass(err);
         }
         if(cnumber.length <10)
         {
+            $('#cnumber').addClass(err);
             isValid =  false;
         }else if(cnumber % 1 != 0){
+            $('#cnumber').addClass(err);
             isValid =  false;
         }
+        $('#cnumber').on('keypress',()=>{
+            $('#cnumber').removeClass(err);
+        });
         // age
         if(age.trim() == '')
         {
+            $('#age').addClass(err);
             isValid = false;
         }else if(age % 1 != 0)
         {
+            $('#age').addClass(err);
             isValid =  false;
         }else if(parseInt(age) < 10){
+            $('#age').addClass(err);
             isValid =  false;
         }
-        
+        $('#age').on('keypress',()=>{
+            $('#age').removeClass(err);
+        });
+        // address
         if(address.trim()=="")
-        {
+        {    
+            $('#address').addClass(err);
             isValid =  false;
         }else if(address.length < 4){
+            $('#address').addClass(err);
             isValid =  false;
         }
+        $('#address').on('keypress',()=>{
+            $('#address').removeClass(err);
+        });
         // gender
         if (radio[0].checked)
         {
@@ -175,17 +211,29 @@ $(document).ready(()=>{
                 
 
             }else{
+                $('#apointement-date').addClass(err);
                 isValid = false;
             }
             
         }else{
+            $('#apointement-date').addClass(err);
             isValid = false;
         }
+        $('#apointement-date').on('change',()=>{
+            $('#apointement-date').removeClass(err);
+        });
         // submit
         if (isValid)
         {
-            alert('dfghjkl');
+            let isConfirm = confirm("Are You Sure To Submit form");
+            if(isConfirm){
+                $('#form-appointment')[0].submit();
+                alert("your appointment form have submited");
+            }else{
+                alert("failed to submit");
+            }
         }
 
     });
+  
 });
