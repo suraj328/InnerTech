@@ -18,42 +18,19 @@ $(document).ready(()=>{
         var dd,mm,year;
         var time = $('#apointement-time').val();
         var timesep = time.split(':');
+        console.log(timesep)
         var hr,min,tz;
         var isValid;
-        // gender
-        if (radio[0].checked)
-        {
-            gender = "male";
-            isValid = true;
-        }else if(radio[1].checked)
-        {
-            gender =  "female";
-            isValid = true;
-        }else if(radio[2].checked)
-        {
-            gender =  "others";
-            isValid = true;
-        }else{
-            isValid = false;
-
-        }
+        var er = 'text-danger';
+        var warn = 'text-warning';
         // doctor selection
-        if(parseInt(doctor.val()) != 0){
-            doctorVal =  doctor.val();
-            isValid =  true;
-        }else{
+        if(parseInt(doctor.val()) == 0){
             isValid =  false;
-        }
-        //date 
-        if(dateSeperate.length == 3)
-        {
-            yy = dateSeperate[0];
-            mm = dateSeperate[1];
-            dd = dateSeperate[2];
-            isValid = true;
         }else{
-            isValid = false;
+            doctorVal =  doctor.val();
+            
         }
+        
         // Time
         if(timesep.length == 2)
         {
@@ -119,7 +96,7 @@ $(document).ready(()=>{
             isValid= false;
         }else if(email.match(emailRegx))
         {
-            console.log('true1');
+            
             isValid  = true;
         }else{
             isValid = false;
@@ -132,8 +109,8 @@ $(document).ready(()=>{
             isValid =  false;
         }else if(name.length < 6){
             isValid = false ;
-        }else{
-            isValid = true;
+        }else if(!(name.match(space))){
+            isValid = false;
         }
         // number
         if(cnumber.trim() == ''){
@@ -144,8 +121,6 @@ $(document).ready(()=>{
             isValid =  false;
         }else if(cnumber % 1 != 0){
             isValid =  false;
-        }else{
-            isValid = true;
         }
         // age
         if(age.trim() == '')
@@ -156,10 +131,56 @@ $(document).ready(()=>{
             isValid =  false;
         }else if(parseInt(age) < 10){
             isValid =  false;
-        }else{
-            isvalid =  true;
         }
         
+        if(address.trim()=="")
+        {
+            isValid =  false;
+        }else if(address.length < 4){
+            isValid =  false;
+        }
+        // gender
+        if (radio[0].checked)
+        {
+            gender = 1;
+            
+        }else if(radio[1].checked)
+        {
+            gender =  2;
+            
+        }else if(radio[2].checked)
+        {
+            gender =  3;
+        }else{
+            isValid = false;
+
+        }
+        //date 
+        if(dateSeperate.length == 3)
+        {
+            yy = dateSeperate[0];
+            mm = dateSeperate[1];
+            dd = dateSeperate[2];
+            
+            
+            if(yy != '')
+            {
+                
+            }else if(mm != '')
+            {
+                
+
+            }else if(dd != '')
+            {
+                
+
+            }else{
+                isValid = false;
+            }
+            
+        }else{
+            isValid = false;
+        }
         // submit
         if (isValid)
         {
